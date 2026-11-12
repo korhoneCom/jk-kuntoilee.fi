@@ -293,3 +293,56 @@ blockquote cite {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ============================================================
+   Painotus-sivu
+   ============================================================ */
+
+.chart-box {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow);
+}
+.section-alt .chart-box {
+  background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.12);
+}
+.chart-box svg { width: 100%; height: auto; display: block; }
+.legend {
+  display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1rem;
+  font-size: .85rem; color: var(--ink-soft);
+}
+.section-alt .legend { color: #C1B8AC; }
+.sw {
+  display: inline-block; width: 14px; height: 3px; border-radius: 2px;
+  margin-right: .4rem; vertical-align: middle;
+}
+.sw-paino { background: #E8A371; }
+.sw-trendi { background: #8FD0D4; }
+.sw-bmi { background: #E8A371; }
+.sw-rasva { background: #8FD0D4; }
+
+/* Merkkipaalut */
+.milestones { list-style: none; margin: 0; padding: 0; }
+.milestones li {
+  display: flex; align-items: baseline; gap: 1.25rem;
+  padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.14);
+}
+.ms-n {
+  font-family: var(--font-head); font-size: 1.9rem; font-weight: 700;
+  color: #E8A371; min-width: 4rem; font-variant-numeric: tabular-nums;
+}
+.milestones h3 { color: #fff; margin: 0 0 .2rem; font-size: 1.05rem; }
+.milestones p { margin: 0; color: #C1B8AC; font-size: .9rem; }
+
+/* Data-taulukko */
+td.mono.down { color: #7FBF8E; }
+td.mono.up { color: #E08A6A; }
+.controls input[type=search] { flex: 1; min-width: 200px; }
+.meta-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  margin-bottom: 1rem; color: var(--muted); font-size: .9rem;
+}
+
+@media (max-width: 50rem) {
+  .milestones li { gap: .85rem; }
+  .ms-n { font-size: 1.4rem; min-width: 3rem; }
+}

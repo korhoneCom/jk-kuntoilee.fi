@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painotus — JK Kuntoilee</title>
+<meta name="description" content="Painonpudotuksen seuranta ja tilastot: 148,3 kg → 90,0 kg, 725 päivän seuranta.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#sisalto">Siirry sisältöön</a>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M4 20.5h6l2.5-8 4 14 3-9 1.8 3H28" fill="none" stroke="currentColor"
+              stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">JK <strong>Kuntoilee</strong></span>
+    </a>
+    <nav class="nav" aria-label="Päävalikko">
+      <a href="index.html#palvelut">Palvelut</a>
+      <a href="index.html#ohjelmat">Ohjelmat</a>
+      <a href="painotus.html" aria-current="page">Painotus</a>
+      <a href="index.html#yhteystiedot">Yhteystiedot</a>
+    </nav>
+  </div>
+</header>
+
+<main id="sisalto">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Painotus · 14.11.2024 – 9.11.2026</p>
+      <h1>148,3 kg → 90,0 kg. Ja sen jälkeen <em>totta</em>.</h1>
+      <p class="lede">
+        Tämä on oma painonpudotukseni seuranta — 124 punnerrusta 725 päivältä.
+        Pudotin 58,3 kg puolitoista vuotta, ja sen jälkeen paino on noussut
+        9,1 kg. Molemmat puolet ovat osa tarinaa.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#kaavio">Katso kaavio</a>
+        <a class="btn btn-ghost" href="#data">Raakadata</a>
+      </div>
+      <p class="hero-note" id="generoitu"></p>
+    </div>
+  </section>
+
+  <section class="section" id="yhteenveto">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Yhteenveto</p>
+        <h2>Numerot, kuten ne ovat</h2>
+      </header>
+      <div class="cards" id="kortit"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="kaavio">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Kulku</p>
+        <h2>Paino 725 päivän aikana</h2>
+        <p class="section-lede">
+          Alin kohta 90,0 kg heinäkuussa 2026. Sen jälkeen paino on noussut —
+          eikä siinä ole mitään häpeää.
+        </p>
+      </header>
+      <div class="chart-box">
+        <svg id="painokaavio" viewBox="0 0 900 320" preserveAspectRatio="none"
+             role="img" aria-label="Painon kulku ajan mukaan"></svg>
+        <div class="legend">
+          <span><span class="sw sw-paino"></span>Paino (kg)</span>
+          <span><span class="sw sw-trendi"></span>Kuukausikeskiarvo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="koostumus">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Koostumus</p>
+        <h2>BMI ja kehon rasva</h2>
+        <p class="section-lede">
+          Paino yksin ei kerro kaikkea. Näissä on kehon koostumuksen
+          kehitys samalta ajalta.
+        </p>
+      </header>
+      <div class="chart-box">
+        <svg id="bmikaavio" viewBox="0 0 900 280" preserveAspectRatio="none"
+             role="img" aria-label="BMI:n ja rasvaprosentin kulku"></svg>
+        <div class="legend">
+          <span><span class="sw sw-bmi"></span>BMI</span>
+          <span><span class="sw sw-rasva"></span>Rasva (%)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="merkkipaalut">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Merkkipaalut</p>
+        <h2>Joka 10 kilon raja</h2>
+      </header>
+      <ol class="milestones" id="milestones"></ol>
+    </div>
+  </section>
+
+  <section class="section" id="kuukaudet">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Kuukausittain</p>
+        <h2>Joka kuukausi omillaan</h2>
+      </header>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Kuukausi</th><th>Merkintöjä</th><th>Keskiarvo</th><th>Alussa</th><th>Lopussa</th><th>Muutos</th>
+          </tr></thead>
+          <tbody id="kk-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="eyebrow">Raakadata</p>
+        <h2>Kaikki punnerrukset</h2>
+        <p class="section-lede">
+          Hae tai suodata. Voit ladata datan CSV:nä.
+        </p>
+      </header>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Hae päivämäärää, painoa tai arvoa…" aria-label="Hae dataa">
+        <select id="fKunta" aria-label="Suodata">
+          <option value="">Näytä kaikki sarakkeet</option>
+          <option value="perus">Vain perus (pvm, kg, pudotus, BMI)</option>
+          <option value="koostumus">Vain koostumus (rasva, lihasmassa)</option>
+        </select>
+      </div>
+      <div class="meta-row">
+        <span id="tulosmaara"></span>
+        <button id="csv" class="btn btn-ghost btn-small" type="button">Lataa CSV</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead id="data-thead"></thead>
+          <tbody id="data-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <p class="foot-brand">JK Kuntoilee</p>
+    <p class="foot-small">Painotus-seuranta on henkilökohtaista dataa.<br>
+    Lähde: oma laskentataulukko.</p>
+    <p class="foot-small">© <span id="vuosi"></span> JK Kuntoilee</p>
+  </div>
+</footer>
+
+<script src="data_painotus.js"></script>
+<script src="painotus.js"></script>
+</body>
+</html>

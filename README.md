@@ -32,3 +32,16 @@ Netlify Formsiin tai omaan endpointtiin.
 
 GitHub Pages: `Settings → Pages → Source: Deploy from a branch → main / (root)`.
 CNAME-tiedosto + DNS-tietue `jk-kuntoilee.fi → korhonecom.github.io`.
+
+## Painotus-sivu
+
+`painotus.html` näyttää painonpudotuksen seurannan (124 punnerrusta,
+14.11.2024 – 9.11.2026). Sivu rakentuu `data_painotus.js`:stä, joka luodaan
+laskentataulukosta:
+
+```bash
+python3 build_painotus.py   # olettaa sheet.csv:n samassa kansiossa
+```
+
+Sivulla: painokaavio, BMI- ja rasvakaavio, merkkipaalut, kuukausittainen
+taulukko ja raakadata hakuehdoin + CSV-vienti.
